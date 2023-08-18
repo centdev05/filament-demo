@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
+use Coolsam\FilamentFlatpickr\Forms\Components\Flatpickr;
 
 class PostResource extends Resource
 {
@@ -66,8 +67,11 @@ class PostResource extends Resource
                                     ->searchable()
                                     ->required(),
 
-                                Forms\Components\DatePicker::make('published_at')
-                                    ->label('Published Date'),
+                                Flatpickr::make('published_at')
+                                    ->altFormat('F j, Y')
+                                    ->theme(\Coolsam\FilamentFlatpickr\Enums\FlatpickrTheme::AIRBNB),
+                                // Forms\Components\DatePicker::make('published_at')
+                                //     ->label('Published Date'),
 
                                 SpatieTagsInput::make('tags'),
                             ])

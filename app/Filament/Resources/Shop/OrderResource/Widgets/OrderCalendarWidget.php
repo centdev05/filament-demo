@@ -42,8 +42,6 @@ class OrderCalendarWidget extends FullCalendarWidget
             ];
         }
 
-        // dd($ordersData);
-
         return $ordersData;
     }
 
@@ -54,6 +52,6 @@ class OrderCalendarWidget extends FullCalendarWidget
     public function fetchEvents(array $fetchInfo): array
     {
         // You can use $fetchInfo to filter events by date.
-        return [];
+        return $this->getViewData();
     }
 }
