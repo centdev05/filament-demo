@@ -6,6 +6,9 @@ use App\Filament\Resources\Shop\OrderResource\Pages;
 use App\Filament\Resources\Shop\OrderResource\RelationManagers;
 use App\Filament\Resources\Shop\OrderResource\Widgets\OrderStats;
 use App\Filament\Resources\Shop\OrderResource\Widgets\OrderStatsChart;
+use App\Filament\Resources\Shop\OrderResource\Widgets\OrderStatsLineChart;
+use App\Filament\Resources\Shop\OrderResource\Widgets\OrderStatsAreaChart;
+use App\Filament\Resources\Shop\OrderResource\Widgets\OrderCalendarWidget;
 use App\Forms\Components\AddressForm;
 use App\Models\Shop\Order;
 use App\Models\Shop\Product;
@@ -174,7 +177,10 @@ class OrderResource extends Resource
     {
         return [
             OrderStats::class,
-            OrderStatsChart::class
+            OrderStatsChart::class,
+            OrderStatsLineChart::class,
+            OrderStatsAreaChart::class,
+            OrderCalendarWidget::class
         ];
     }
 
